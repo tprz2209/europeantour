@@ -23,4 +23,4 @@ def generate_search_list():
 def send_games_to_js():
     return processor.send_games_to_js()
 
-app.run(debug=True)
+# app.run(debug=True)
