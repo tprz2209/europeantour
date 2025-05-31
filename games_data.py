@@ -46,7 +46,7 @@ class GamesData:
         self.games_doubled = pd.concat([self.games_raw, self.games_doubled])
 
     def load_overall_data(self):
-        self.players = self.games_raw['Zawodnik'].tolist()
+        self.players = self.games_doubled['Zawodnik'].tolist()
         self.players = list(set(self.players))
         self.players.sort()
 
@@ -85,12 +85,20 @@ class GamesData:
         player_unique_events_list = (list(set(player_unique_events_list)))
 
         player_games_count = int(self.games_doubled['Zawodnik'].value_counts()[player])
-        player_wins_count = int(self.games_raw['Zawodnik'].value_counts()[player])
+
+        try:
+            player_wins_count = int(self.games_raw['Zawodnik'].value_counts()[player])
+        except:
+            player_wins_count = 0
+
         player_titles_count = int(len(self.games_raw[(self.games_raw['Zawodnik'] == player) & (self.games_raw['Faza'] == 'Final')]))
 
-        player_avg = list(self.games_doubled[self.games_doubled['Zawodnik'] == player]['AVG - zawodnik'])
-        player_avg = [avg for avg in player_avg if avg != '']
-        player_avg = round(sum(player_avg) / len(player_avg), 2)
+        try:
+            player_avg = list(self.games_doubled[self.games_doubled['Zawodnik'] == player]['AVG - zawodnik'])
+            player_avg = [avg for avg in player_avg if avg != '']
+            player_avg = round(sum(player_avg) / len(player_avg), 2)
+        except:
+            player_avg = 0
 
         print(player_wins_count)
 
