@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../static/js/datatable-config.js" defer></script>
+    <script src="../static/js/fetch-handler.js" defer></script>
+    <script src="../static/js/main.js" defer></script>
+
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.13.4/sorting/date-eu.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>WYBÓR ZAWODNIKA</h1>
+      <table class="player-stats-table">
+        <thead class="player-stats-table-head">
+          <tr>
+            <th>Turnieje</th>
+            <th>Mecze</th>
+            <th>Zwycięstwa</th>
+            <th>Tytuły</th>
+            <th>Średnia</th>
+          </tr>
+        </thead>
+        <tbody class="player-stats-table-body"></tbody>
+      </table>
+    </header>
+
+    <main>
+      <select class="selected-player-input">
+        {% for player in players %}
+        <option value="{{ player }}">{{ player }}</option>
+        {% endfor %}
+      </select>
+      <button class="check-btn">Szukaj</button>
+
+      <div class="player-games-div">
+        <table id="player-games-table" class="player-games-table">
+          <thead class="player-games-table-head">
+            <tr>
+              <th>Data</th>
+              <th>Zawodnik</th>
+              <th>Wynik</th>
+              <th>Przeciwnik</th>
+              <th>Faza</th>
+              <th>Turniej</th>
+            </tr>
+          </thead>
+          <tbody class="player-games-table-body"></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+html {
+  font-size: 62.5%;
+  width: 90%;
+  margin: 1rem auto;
+  background-color: #030406;
+}
+
+* {
+  font-family: "Titillium Web", sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+}
+
+h1 {
+  flex: 1;
+}
+
+.player-stats-table {
+  flex: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.selected-player-input {
+  background-color: #101926;
+  margin-bottom: 2rem;
+  padding: 0.4rem 1rem;
+}
+
+button {
+  background-color: #101926;
+  border-radius: 0.4rem;
+  padding: 0.4rem 1rem;
+}
+
+.dataTables_length {
+  background-color: #101926;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.dataTables_length option {
+  background-color: #101926;
+}
+
+.dataTables_paginate {
+  background-color: #101926;
+}
+
+.dataTables_filter {
+  background-color: #101926;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+}
+
+table {
+  background-color: #101926;
+  width: 100%;
+}
+
+thead {
+  background-color: #101926;
+}
+
+.player-stats-table th,
+.player-stats-table td {
+  width: 20% !important;
+}
+
+td {
+  background-color: #1b2a3f;
+  text-align: center;
+  font-size: 1.4em;
+  height: 2rem;
+}
+
+th {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+th:first-child,
+td:first-child {
+  width: 11%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 24%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 8%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 24%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 8%;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  width: 25%;
+}
+
+.win {
+  background-color: #337259;
+}
+
+.lose {
+  background-color: #693b39;
+}
